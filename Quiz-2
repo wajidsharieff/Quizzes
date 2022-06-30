@@ -1,0 +1,29 @@
+import random
+amount = 1000
+
+choice = "yes"
+
+while choice == "yes":
+    outcome = random.randint(1,14)
+    print("your score is -", outcome)
+
+    if outcome > 7:
+        print("Jackpot = Rs. 10000000")
+    elif outcome<7:
+        amount = amount-(outcome*100)
+    else:
+        print("you have hit jackpot!!")
+        amount = amount+(outcome*100)
+        break #break terminates the loop and not the program. We should put inside the loop not outside
+        
+    if amount<=600:
+        choice = input("Insufficient balance. Do you wish to quit, enter no or enter yes to top up - ")
+        if choice == 'yes':
+            amount == amount+1000
+            continue
+        else:
+            break
+        
+    choice = input("Your current balance is - "+ str(amount)+  "Do you wish to play again? yes/no - ")
+    
+print("final amt - ", amount)
