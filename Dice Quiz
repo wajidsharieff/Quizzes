@@ -1,0 +1,27 @@
+CHECK IF YOU ARE LUCKY ENOUGH!
+
+import random
+
+roll = 3
+
+choice = 'yes'
+
+while choice == 'yes':
+    number = random.randint(1,6)
+    print("The dice number is: ", number)
+    
+    if number!= roll:
+        print("Yay, you are lucky.Your score is: ", number)
+        
+    else:
+        print("you lost")
+        choice = input("Do you want to continue?, enter yes/no")
+        if choice == 'yes':
+            continue
+            
+        else:
+            break
+            
+    choice = input("your current score is: " + str(number) + "Do you wish to continue?, enter yes/no")
+        
+print("The final score is: ", number)
