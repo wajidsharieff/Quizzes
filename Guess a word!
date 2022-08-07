@@ -1,0 +1,18 @@
+set=["milk", "race", "rice", "race", "hide", "tree","jump","bike"]
+
+print("Let's play a word guessing game")
+
+
+w1 = input('Guess a word: ')
+
+count=0
+
+for i in range(0,3):
+    if w1==set:
+        print('Great Guess, Thank you for playing')
+    else:
+        w2=input('Sorry try again: ')
+        count+=1
+    if count==2:
+        print('Sorry you lose')   
+        break
