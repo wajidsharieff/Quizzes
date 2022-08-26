@@ -1,18 +1,17 @@
-set=["milk", "race", "rice", "race", "hide", "tree","jump","bike"]
-
-print("Let's play a word guessing game")
-
-
-w1 = input('Guess a word: ')
-
-count=0
-
-for i in range(0,3):
-    if w1==set:
-        print('Great Guess, Thank you for playing')
+words = ["milk", "race", "rice", "race", "hide", "tree","jump","bike"]
+print("Let's play a word guessing game. The word has 4 letters in it and you get 5 guesses!")
+count = 0
+for i in range(5):
+    word = input("Guess a word: ").lower()
+    if word in words:
+        print("Great Guess", count+1)
+        count = count+1
     else:
-        w2=input('Sorry try again: ')
-        count+=1
-    if count==2:
-        print('Sorry you lose')   
+        print("Worng guess")
+    if count == 2:
+        print('Thank you, you won!!')
         break
+    if i==3 and count == 0:
+        print('You lost the game')
+    if count==0 and i ==4:
+        print('You lost the game')
